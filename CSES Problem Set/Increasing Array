@@ -1,0 +1,23 @@
+//https://cses.fi/problemset/task/1094
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main(){
+	long long int n, res;
+	cin>>n;
+	long long int arr[n];
+	for(long long int i=0; i<n; i++){
+		long long int k;
+		cin>>arr[i];
+		if(i==0)	
+			res=0;
+		else if(arr[i-1] > arr[i]){
+			res+=arr[i-1]-arr[i];
+			arr[i]+=arr[i-1]-arr[i];
+			// cout<<arr[i-1]<<" "<<arr[i]<<" "<<res<<endl; 
+		}
+	}
+	cout << res;
+	return 0;
+}
