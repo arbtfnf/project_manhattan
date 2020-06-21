@@ -1,0 +1,28 @@
+//https://cses.fi/problemset/task/1071
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long int t;
+	cin>>t;
+	while(t--){
+		long long int r,c,res;
+		cin>>r>>c;
+		if(r>c){
+			if(r%2 == 0){
+				res = r*r + 1 - c;
+			}else{
+				res = (r-1)*(r-1) + c;
+			}
+		}else{
+			if(c%2 == 0){
+				res = (c-1)*(c-1) + r; 
+			}else{
+				res = c*c - r + 1;
+			}
+		}
+		cout<<res<<endl;
+	}
+	return 0;
+}
