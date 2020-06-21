@@ -1,0 +1,22 @@
+//https://cses.fi/problemset/task/1617
+
+#include <bits/stdc++.h>  
+using namespace std; 
+  
+long long int expo(long long int a, long long int b, long long int mod){
+	int res = 1;
+	for(long long int i=0; i<b;i++){
+		res = (res)*(a)%mod;
+	}
+	return res;
+} 
+  
+// Driver code  
+int main()  
+{  
+    long long int A;
+    cin>>A;
+    cout << expo(2,A,1e9 + 7);
+    
+    return 0;  
+}
