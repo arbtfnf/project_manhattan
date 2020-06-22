@@ -1,0 +1,18 @@
+//https://cses.fi/problemset/task/1618
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long int n, count5 =0;
+	cin>>n;
+	
+	for(long long int i=1; i<=n; i++){
+		if(pow(5,i) > n)	break;
+		count5 += n/pow(5,i);
+	}
+	cout<<count5;
+	
+	
+	return 0;
+}
