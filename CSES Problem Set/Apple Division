@@ -1,0 +1,26 @@
+// https://cses.fi/problemset/task/1623
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define all(x) x.begin(), x.end()
+
+int main() {
+	string a;
+	vector<string> v;
+	cin>>a;
+	
+	sort(all(a));
+	
+	do {
+		v.push_back(a);
+	} while(next_permutation(all(a)));
+	
+	cout<< v.size() <<endl;
+	
+	for(auto it = v.begin(); it != v.end(); it++){
+		cout<< *it << endl;
+	}
+	
+	return 0;
+}
