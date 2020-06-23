@@ -1,0 +1,41 @@
+// https://cses.fi/problemset/result/583736/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	string a;
+	cin>>a;
+	long long int count[26];
+	vector<char> arr1, arr2;
+	
+	for(int i=0; i<26; i++)	count[i] = 0;
+	
+	for(long long int i=0; i<a.size(); i++){
+		int j =	a[i];
+		
+		if(count[j-65] > 0){
+			arr1.push_back(a[i]);
+			arr2.push_back(a[i]);
+			count[j-65]--;
+		}
+		else	count[j-65]++;
+	}
+	
+	for(long long int i=0; i<26; i++){
+		a[0] = i + 65;
+		if(count[i] > 0){
+			arr1.push_back(a[0]);
+			break;
+		}
+	}
+	
+	for( auto it = arr2.rbegin(); it != arr2.rend(); it++){
+		arr1.push_back(*it);
+	}
+	
+	if(arr1.size() != a.size())	cout << "NO SOLUTION"<<endl;
+	else	for(auto it = arr1.begin(); it != arr1.end(); it++)	cout<<*it;
+	
+	return 0;
+}
