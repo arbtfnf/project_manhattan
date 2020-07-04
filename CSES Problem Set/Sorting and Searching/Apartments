@@ -1,0 +1,38 @@
+https://cses.fi/problemset/task/1084
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	long long int n, m, k, count=0;
+	cin>>n>>m>>k;
+	vector<int> a, b;
+	for(long long int i=0; i<n; i++){
+		int kj;
+		cin>>kj;
+		a.push_back(kj);
+	}
+	
+	for(long long int i=0; i<m; i++){
+		int kl;
+		cin>>kl;
+		b.push_back(kl);
+	}
+	sort(a.begin(), a.end());
+	sort(b.begin(), b.end());
+	long long int g=0, h=0;
+	while(g<n && h<m){
+		if(a[g]+k>=b[h] && a[g]-k<=b[h]){
+			// cout<< a[g] << " "<< b[h] << endl;
+			count++;
+			h++;
+			g++;
+		}
+		else if(a[g] < b[h] - k)	g++;
+		else	h++;
+	}
+	
+	cout<<count;
+	
+	return 0;
+}
