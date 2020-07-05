@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main(){
+	long long int n, x, count;
+	cin>>n>>x;
+	vector<int> ch;
+	for(long long int i=0; i<n; i++){
+		int skb;
+		cin>>skb;
+		ch.push_back(skb);
+	}
+	sort(ch.begin(), ch.end());
+	count = n;
+	long long int j=n-1, i=0;
+	while(i < j){
+		if(ch[i] + ch[j] <= x){
+			i++;
+			count -= 1;
+			}
+		j--;
+	}
+	cout<<count;
+	return 0;
+}
