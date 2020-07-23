@@ -1,0 +1,15 @@
+//https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/578/
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        map<long long int, long long int> map;
+        if(nums.size() < 2) return false;
+        for(auto i=0; i<nums.size(); i++){
+            if(map[nums[i]]) return true;
+            map[nums[i]] = 1;
+        }
+        // if(map.size() != nums.size())  return true;
+        return false;
+    }
+};
