@@ -1,0 +1,25 @@
+//https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/
+
+class Solution {
+public:
+    
+    void reverse(vector<int>& nums, int low, int high){
+        while(high > low){
+            long long int tmp = nums[high];
+            nums[high]=nums[low];
+            nums[low]=tmp;
+            low++;
+            high--;
+        }
+    }
+    
+    void rotate(vector<int>& nums, int k) {
+        long long int n = nums.size();
+        int x = k%n;
+        if(n == 0) return;
+        if(n<2) return;
+        reverse(nums,0, n-1);
+        reverse(nums, 0, x-1);
+        reverse(nums, x, n-1);
+    }
+};
