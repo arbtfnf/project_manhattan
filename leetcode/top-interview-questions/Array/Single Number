@@ -1,0 +1,21 @@
+//https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        long long int n = nums.size();
+        if(n==1){
+            return nums[0]; 
+        }
+        for(auto i=0; i<n; i++){
+            if(nums[i] == nums[i+1]){
+                i++;
+            }
+            else{
+                return nums[i];
+            }
+        }
+        return 0;
+    }
+};
