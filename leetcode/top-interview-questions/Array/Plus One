@@ -1,0 +1,18 @@
+//https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/559/
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        long long int x=1, n=digits.size();
+        for(auto i=n-1; i>-1; i--){
+            digits[i] +=x;
+            x=0;
+            if(digits[i]%10 == 0 && digits[i] != 0){
+                x = 1;
+                digits[i]=digits[i]%10;
+            }
+        }
+        if(x == 1)  digits.insert(digits.begin(), 1, x);
+        return digits;
+    }
+};
